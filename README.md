@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/thejandroman/puppetfile_fixtures_generator.svg?branch=master)](https://travis-ci.org/thejandroman/puppetfile_fixtures_generator)
+[![Coverage Status](https://coveralls.io/repos/github/thejandroman/puppetfile_fixtures_generator/badge.svg?branch=master)](https://coveralls.io/github/thejandroman/puppetfile_fixtures_generator?branch=master)
+
 # PuppetfileFixturesGenerator
 
 Welcome to your new gem! In this directory, you'll find the files you
