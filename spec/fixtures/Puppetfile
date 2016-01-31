@@ -1,0 +1,20 @@
+mod 'puppetlabs/apache', :latest
+
+mod 'puppetlabs-apt'
+
+mod 'puppetlabs/stdlib', '4.11.0'
+
+mod 'vcsrepo',
+    git: 'https://github.com/puppetlabs/puppetlabs-vcsrepo.git',
+    tag: '1.3.2'
+
+mod 'concat',
+    git: 'https://github.com/puppetlabs/puppetlabs-concat.git',
+    branch: 'master'
+
+mod 'firewall',
+    git: 'https://github.com/puppetlabs/puppetlabs-firewall',
+    ref: '71c659faf38d5e0cf19cfc16bb690b4c450fbd2a'
+
+mod 'inifile',
+    git: 'https://github.com/puppetlabs/puppetlabs-inifile.git'

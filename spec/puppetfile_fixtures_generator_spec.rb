@@ -5,8 +5,6 @@ describe PuppetfileFixturesGenerator do
     expect(PuppetfileFixturesGenerator::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    pending('no code yet')
-    fail
+  describe '#create_fixtures' do
   end
 end
