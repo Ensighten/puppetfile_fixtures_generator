@@ -27,7 +27,7 @@ module PuppetfileFixturesGenerator
     #
     def symlink_builder(name)
       unless name.nil?
-        @module_hash['fixtures']['symlinks'] = { 'name' => '#{source_dir}' }
+        @module_hash['fixtures']['symlinks'] = { name => '#{source_dir}' }
       end
     end
 
