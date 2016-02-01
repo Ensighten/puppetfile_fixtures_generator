@@ -37,7 +37,7 @@ The gem can be consumed as either a CLI tool or as a library.
 
 ### Library
 
-    $ bundle; bundle exec yardoc; open doc/index.html
+See documentation: http://www.rubydoc.info/gems/puppetfile_fixtures_generator/
 
 ## Development
 
