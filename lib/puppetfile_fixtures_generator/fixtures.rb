@@ -31,7 +31,7 @@ module PuppetfileFixturesGenerator
     end
 
     #
-    def module_builder(mod)
+    def module_builder(mod) # rubocop:disable Metrics/MethodLength
       case mod.properties[:type]
       when :forge
         ctgry   = 'forge_modules'
@@ -43,7 +43,8 @@ module PuppetfileFixturesGenerator
         version = mod.instance_variable_get :@ref
       end
 
-      @module_hash['fixtures'][ctgry] = {} unless @module_hash['fixtures'].key?(ctgry)
+      @module_hash['fixtures'][ctgry] = {} unless
+        @module_hash['fixtures'].key?(ctgry)
 
       add_module(ctgry, mod.name, repo, version)
     end
