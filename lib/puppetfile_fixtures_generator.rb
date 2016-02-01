@@ -18,21 +18,24 @@ module PuppetfileFixturesGenerator
   #   the fixtures YAML file.
   # @param [String] fixtures_yml The path, local or absolute, to the
   #   fixtures file to be written. The path, not the file, must exist.
+  # @param [String] symlink_name The name of the module to include as
+  #   the source_dir symlink in the fixtures file.
   #
   # @return The fixtures file specified as a parameter.
   #
-  def self.create_fixtures(puppetfile = './Puppetfile',
-                           fixtures_yml = './.fixtures.yml')
-    # load puppetfile file
-    pf = R10K::Puppetfile.new(Pathname.new(puppetfile).dirname.to_s)
+  def self.create_fixtures(puppetfile = nil, fixtures_yml = './.fixtures.yml', symlink_name = nil)
+    modules = nil
 
-    # parse puppetfile
-    pf.load
+    unless puppetfile.nil?
+      # load puppetfile file
+      pf = R10K::Puppetfile.new(Pathname.new(puppetfile).dirname.to_s)
+      # parse puppetfile
+      pf.load
+      modules = pf.modules
+    end
 
     # write fixtures
-    fixtures = PuppetfileFixturesGenerator::Fixtures.new(fixtures_yml,
-                                                         pf.modules)
-
+    fixtures = PuppetfileFixturesGenerator::Fixtures.new(fixtures_yml, modules, symlink_name)
     fixtures.write
   end
 

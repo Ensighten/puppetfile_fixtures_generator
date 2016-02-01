@@ -18,11 +18,15 @@ EOS
   opt :puppetfile,
       'The path, local or absolute, to the Puppetfile. This Puppetfile will be loaded and parsed to create the fixtures YAML file.',
       type: :string,
-      default: './Puppetfile'
+      default: nil
   opt :fixtures_yml,
       'The path, local or absolute, to the fixtures file to be written. The path, not the file, must exist.',
       type: :string,
       default: './.fixtures.yml'
+  opt :symlink_name,
+      'The name of the module to include as the source_dir symlink in the fixtures file.',
+      type: :string,
+      default: nil
   opt :quiet,
       'Do not prompt.',
       type: :bool,
@@ -42,6 +46,7 @@ end
 say("Creating #{opts[:fixtures_yml]}...")
 
 PuppetfileFixturesGenerator.create_fixtures(opts[:puppetfile],
-                                            opts[:fixtures_yml])
+                                            opts[:fixtures_yml],
+                                            opts[:symlink_name])
 
 say('Complete.')
