@@ -6,10 +6,11 @@ module PuppetfileFixturesGenerator
   # changes in the future this class will be rewritten.
   class Fixtures
     #
-    def initialize(fixtures_file, modules)
+    def initialize(fixtures_file, modules, symlink_name = nil)
       @fixtures = Pathname.new(fixtures_file)
       @modules = modules
       @module_hash = { 'fixtures' => {} }
+      symlink_builder(symlink_name)
     end
 
     def write
@@ -24,10 +25,15 @@ module PuppetfileFixturesGenerator
     private
 
     #
-    def hash_the_modules
-      @modules.each do |mod|
-        module_builder(mod)
+    def symlink_builder(name)
+      unless name.nil?
+        @module_hash['fixtures']['symlinks'] = { 'name' => '#{source_dir}' }
       end
+    end
+
+    #
+    def hash_the_modules
+      @modules.each { |mod| module_builder(mod) } unless @modules.nil?
     end
 
     #
