@@ -7,3 +7,4 @@
 /pkg/
 /spec/reports/
 /tmp/
+puppetfile_fixtures_generator-*.gem
