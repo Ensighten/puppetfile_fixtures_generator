@@ -1,3 +1,5 @@
 - Add support for creating a Puppetfile from a fixtures file
 - Update library documentation
 - Update tests
+- Sort the resulting fixtures file
+- Handle Symlinks in fixtures better
