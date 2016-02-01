@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+require 'puppetfile_fixtures_generator'
+require 'trollop'
+require 'highline/import'
+
+opts = Trollop.options do
+  version PuppetfileFixturesGenerator::VERSION
+  banner <<-EOS
+Writes a YAML file conforming to puppetlabs_spec_helper's fixtures file format
+based off a provided Puppetfile.
+
+Usage:
+      puppetfile_fixtures_generator [options]
+where [options] are:
+EOS
+
+  opt :puppetfile,
+      'The path, local or absolute, to the Puppetfile. This Puppetfile will be loaded and parsed to create the fixtures YAML file.',
+      type: :string,
+      default: './Puppetfile'
+  opt :fixtures_yml,
+      'The path, local or absolute, to the fixtures file to be written. The path, not the file, must exist.',
+      type: :string,
+      default: './.fixtures.yml'
+  opt :quiet,
+      'Do not prompt.',
+      type: :bool,
+      default: false
+end
+
+unless opts[:quiet]
+  confirm = ask("This will overwrite #{opts[:fixtures_yml]}. Proceed? [Y/n] ") do |yn|
+    yn.case = :downcase
+    yn.default = 'y'
+    yn.limit = 1
+    yn.validate = /[yn]/i
+  end
+  exit unless confirm == 'y'
+end
+
+say("Creating #{opts[:fixtures_yml]}...")
+
+PuppetfileFixturesGenerator.create_fixtures(opts[:puppetfile],
+                                            opts[:fixtures_yml])
+
+say('Complete.')
