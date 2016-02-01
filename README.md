@@ -3,13 +3,12 @@
 
 # PuppetfileFixturesGenerator
 
-Welcome to your new gem! In this directory, you'll find the files you
-need to be able to package up your Ruby library into a gem. Put your
-Ruby code in the file `lib/puppetfile_fixtures_generator`. To
-experiment with that code, run `bin/console` for an interactive
-prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem was born out of frustration duplicating entries in a
+`.fixtures.yml` and a `Puppetfile`. It writes a YAML file conforming
+to
+[puppetlabs_spec_helper's](https://github.com/puppetlabs/puppetlabs_spec_helper)
+fixtures file format based off a provided
+[Puppetfile](https://github.com/puppetlabs/r10k/blob/master/doc/puppetfile.mkd).
 
 ## Installation
 
@@ -29,29 +28,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The gem can be consumed as either a CLI tool or as a library.
+
+### CLI Tool
+
+    $ puppetfile_fixtures_generator --help
+
+### Library
+
+    $ bundle; bundle exec yardoc; open doc/index.html
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install
-dependencies. Then, run `rake spec` to run the tests. You can also run
-`bin/console` for an interactive prompt that will allow you to
-experiment.
-
-To install this gem onto your local machine, run `bundle exec rake
-install`. To release a new version, update the version number in
-`version.rb`, and then run `bundle exec rake release`, which will
-create a git tag for the version, push git commits and tags, and push
-the `.gem` file to [rubygems.org](https://rubygems.org).
+After checking out the repo, run `bundle install` to install
+dependencies. Then, run `bundle exec rake` to run the tests.
 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/[USERNAME]/puppetfile_fixtures_generator. This
+https://github.com/thejandroman/puppetfile_fixtures_generator. This
 project is intended to be a safe, welcoming space for collaboration,
 and contributors are expected to adhere to the
 [Contributor Covenant](contributor-covenant.org) code of conduct.
-
 
 ## License
 

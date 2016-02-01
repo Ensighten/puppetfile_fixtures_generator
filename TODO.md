@@ -1,0 +1,3 @@
+- Add support for creating a Puppetfile from a fixtures file
+- Update library documentation
+- Update tests
