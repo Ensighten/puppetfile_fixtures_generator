@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/Ensighten/puppetfile_fixtures_generator.svg?branch=master)](https://travis-ci.org/Ensighten/puppetfile_fixtures_generator)
-[![Coverage Status](https://coveralls.io/repos/github/thejandroman/puppetfile_fixtures_generator/badge.svg?branch=master)](https://coveralls.io/github/thejandroman/puppetfile_fixtures_generator?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Ensighten/puppetfile_fixtures_generator/badge.svg?branch=master)](https://coveralls.io/github/Ensighten/puppetfile_fixtures_generator?branch=master)
 [![Gem Version](https://badge.fury.io/rb/puppetfile_fixtures_generator.svg)](https://badge.fury.io/rb/puppetfile_fixtures_generator)
 [![Inline docs](http://inch-ci.org/github/Ensighten/puppetfile_fixtures_generator.svg?branch=master)](http://inch-ci.org/github/Ensighten/puppetfile_fixtures_generator)
 
