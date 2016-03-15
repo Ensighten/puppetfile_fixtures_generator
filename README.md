@@ -48,7 +48,7 @@ dependencies. Then, run `bundle exec rake` to run the tests.
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/thejandroman/puppetfile_fixtures_generator. This
+https://github.com/Ensighten/puppetfile_fixtures_generator. This
 project is intended to be a safe, welcoming space for collaboration,
 and contributors are expected to adhere to the
 [Contributor Covenant](contributor-covenant.org) code of conduct.

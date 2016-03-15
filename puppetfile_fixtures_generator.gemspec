@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.email         = ['alejandro@ideasftw.com']
   s.executables << 'puppetfile_fixtures_generator'
   s.files         = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*', 'spec/**/*'].to_a
-  s.homepage      = 'https://github.com/thejandroman/puppetfile_fixtures_generator'
+  s.homepage      = 'https://github.com/Ensighten/puppetfile_fixtures_generator'
   s.license       = 'MIT'
   s.name          = 'puppetfile_fixtures_generator'
   s.summary       = 'Create a .fixtures.yml file from a Puppetfile.'
