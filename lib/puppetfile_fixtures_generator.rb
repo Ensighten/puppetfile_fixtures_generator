@@ -43,7 +43,7 @@ module PuppetfileFixturesGenerator
   # @param [String] puppetfile The path, local or absolute, to the
   #   Puppetfile. This Puppetfile will be loaded and parsed to create
   #   the fixtures YAML file.
-  # @param [String] fixtures_yml The path, local or absolute, to the
+  # @param [String] fixtures The path, local or absolute, to the
   #   fixtures file to be written. The path, not the file, must exist.
   #
   # @return [Array] The results of self.hash_differ
