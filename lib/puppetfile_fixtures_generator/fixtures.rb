@@ -6,20 +6,27 @@ module PuppetfileFixturesGenerator
   # changes in the future this class will be rewritten.
   class Fixtures
     #
-    def initialize(fixtures_file, modules, symlink_name = nil)
+    def initialize(fixtures_file, modules = nil, symlink_name = nil)
       @fixtures = Pathname.new(fixtures_file)
       @modules = modules
       @module_hash = { 'fixtures' => {} }
-      symlink_builder(symlink_name)
+      @symlink_name = symlink_name
     end
 
-    def write
+    def modules_hash
+      YAML.load(@fixtures.read)
+    end
+
+    #
+    def write(fixtures_pn = @fixtures)
+      return 'Cannot write empty modules' if @modules.nil?
       # create hash of modules
-      hash_the_modules
+      @module_hash['fixtures'] = @modules
+      symlink_builder(@symlink_name)
       # convert hash to yaml
       yaml = @module_hash.to_yaml
       # write yaml
-      @fixtures.write(yaml)
+      fixtures_pn.write(yaml)
     end
 
     private
@@ -29,36 +36,6 @@ module PuppetfileFixturesGenerator
       unless name.nil?
         @module_hash['fixtures']['symlinks'] = { name => '#{source_dir}' }
       end
-    end
-
-    #
-    def hash_the_modules
-      @modules.each { |mod| module_builder(mod) } unless @modules.nil?
-    end
-
-    #
-    def module_builder(mod) # rubocop:disable Metrics/MethodLength
-      case mod.properties[:type]
-      when :forge
-        ctgry   = 'forge_modules'
-        repo    = mod.title
-        version = mod.expected_version
-      when :git
-        ctgry   = 'repositories'
-        repo    = mod.instance_variable_get :@remote
-        version = mod.instance_variable_get :@ref
-      end
-
-      @module_hash['fixtures'][ctgry] = {} unless
-        @module_hash['fixtures'].key?(ctgry)
-
-      add_module(ctgry, mod.name, repo, version)
-    end
-
-    #
-    def add_module(category, name, repo, version)
-      hash = { name => { 'repo' => repo, 'ref' => version } }
-      @module_hash['fixtures'][category].merge!(hash)
     end
   end
 end
