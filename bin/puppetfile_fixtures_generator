@@ -27,13 +27,17 @@ EOS
       'The name of the module to include as the source_dir symlink in the fixtures file.',
       type: :string,
       default: nil
+  opt :diff,
+      'Diff puppetfile and fixtures instead of writing',
+      type: :bool,
+      default: false
   opt :quiet,
       'Do not prompt.',
       type: :bool,
       default: false
 end
 
-unless opts[:quiet]
+unless opts[:quiet] || opts[:diff]
   confirm = ask("This will overwrite #{opts[:fixtures_yml]}. Proceed? [Y/n] ") do |yn|
     yn.case = :downcase
     yn.default = 'y'
@@ -43,10 +47,21 @@ unless opts[:quiet]
   exit unless confirm == 'y'
 end
 
-say("Creating #{opts[:fixtures_yml]}...")
-
-PuppetfileFixturesGenerator.create_fixtures(opts[:puppetfile],
-                                            opts[:fixtures_yml],
-                                            opts[:symlink_name])
-
-say('Complete.')
+if !opts[:diff]
+  say("Creating #{opts[:fixtures_yml]}...")
+  PuppetfileFixturesGenerator.create_fixtures(opts[:puppetfile],
+                                              opts[:fixtures_yml],
+                                              opts[:symlink_name])
+  say('Complete.')
+  exit
+else
+  say('Diffing Puppetfile and fixtures')
+  diff = PuppetfileFixturesGenerator.diff(opts[:puppetfile],
+                                          opts[:fixtures_yml])
+  if diff[0]
+    say('Modules match in both files.')
+    exit
+  else
+    abort "Modules do not match in both files\n#{diff[1]}"
+  end
+end
