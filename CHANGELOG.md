@@ -6,7 +6,3 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Puppetfile class to simplify fixtures class
 - Ability to diff a puppetfile and fixtures file
-
-### Todo
-- Documentation
-- Tests
