@@ -70,6 +70,6 @@ module PuppetfileFixturesGenerator
   def self.hash_differ(hash1, hash2)
     result = hash1 == hash2
     return [result, {}] if result
-    [result, Hash[*((hash2.size > hash1.size) ? hash2 - hash1 : hash1 - hash2).flatten]]
+    [result, Hash[*(hash2.size > hash1.size ? hash2 - hash1 : hash1 - hash2).flatten]]
   end
 end
