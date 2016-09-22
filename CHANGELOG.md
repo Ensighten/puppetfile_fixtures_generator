@@ -6,3 +6,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Puppetfile class to simplify fixtures class
 - Ability to diff a puppetfile and fixtures file
+
+### Changed
+- Bumped version of r10k dependency
