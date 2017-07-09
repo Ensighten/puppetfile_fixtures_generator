@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.1'
 
   s.add_runtime_dependency 'highline', '~> 1.7'
-  s.add_runtime_dependency 'r10k', '~> 2.3.0'
+  s.add_runtime_dependency 'r10k', '~> 2.3'
   s.add_runtime_dependency 'trollop', '~> 2.1'
 
   s.add_development_dependency 'bundler', '~> 1.10'
