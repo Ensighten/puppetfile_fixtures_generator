@@ -1,2 +1,5 @@
 Metrics/LineLength:
   Enabled: false
+
+Layout/IndentHeredoc:
+  Enabled: false

@@ -4,7 +4,7 @@ require 'puppetfile_fixtures_generator'
 require 'trollop'
 require 'highline/import'
 
-opts = Trollop.options do
+opts = Trollop.options do # rubocop:disable Metrics/BlockLength
   version PuppetfileFixturesGenerator::VERSION
   banner <<-EOS
 Writes a YAML file conforming to puppetlabs_spec_helper's fixtures file format

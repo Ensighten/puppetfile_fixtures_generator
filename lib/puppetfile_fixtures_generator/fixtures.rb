@@ -14,7 +14,7 @@ module PuppetfileFixturesGenerator
     end
 
     def modules_hash
-      YAML.load(@fixtures.read)
+      YAML.safe_load(@fixtures.read)
     end
 
     #
