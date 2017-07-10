@@ -1,4 +1,5 @@
 # coding: utf-8
+
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'puppetfile_fixtures_generator/version'
@@ -10,7 +11,7 @@ Gem::Specification.new do |s|
   s.email                 = ['alejandro@ideasftw.com']
   s.executables << 'puppetfile_fixtures_generator'
   s.files                 = Dir['lib/**/*.rb'] + Dir['bin/*'] + Dir['[A-Z]*'] + Dir['spec/**/*']
-  s.homepage              = 'https://github.com/Ensighten/puppetfile_fixtures_generator'
+  s.homepage              = 'https://github.com/thejandroman/puppetfile_fixtures_generator'
   s.license               = 'MIT'
   s.name                  = 'puppetfile_fixtures_generator'
   s.summary               = 'Create a .fixtures.yml file from a Puppetfile.'

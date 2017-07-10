@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/Ensighten/puppetfile_fixtures_generator.svg?branch=master)](https://travis-ci.org/Ensighten/puppetfile_fixtures_generator)
-[![Coverage Status](https://coveralls.io/repos/github/Ensighten/puppetfile_fixtures_generator/badge.svg?branch=master&bust=1)](https://coveralls.io/github/Ensighten/puppetfile_fixtures_generator?branch=master)
+[![Build Status](https://travis-ci.org/thejandroman/puppetfile_fixtures_generator.svg?branch=master)](https://travis-ci.org/thejandroman/puppetfile_fixtures_generator)
+[![Coverage Status](https://coveralls.io/repos/github/thejandroman/puppetfile_fixtures_generator/badge.svg?branch=master&bust=1)](https://coveralls.io/github/thejandroman/puppetfile_fixtures_generator?branch=master)
 [![Gem Version](https://badge.fury.io/rb/puppetfile_fixtures_generator.svg)](https://badge.fury.io/rb/puppetfile_fixtures_generator)
-[![Inline docs](http://inch-ci.org/github/Ensighten/puppetfile_fixtures_generator.svg?branch=master)](http://inch-ci.org/github/Ensighten/puppetfile_fixtures_generator)
+[![Inline docs](http://inch-ci.org/github/thejandroman/puppetfile_fixtures_generator.svg?branch=master)](http://inch-ci.org/github/thejandroman/puppetfile_fixtures_generator)
 
 # PuppetfileFixturesGenerator
 
@@ -48,7 +48,7 @@ dependencies. Then, run `bundle exec rake` to run the tests.
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/Ensighten/puppetfile_fixtures_generator. This
+https://github.com/thejandroman/puppetfile_fixtures_generator. This
 project is intended to be a safe, welcoming space for collaboration,
 and contributors are expected to adhere to the
 [Contributor Covenant](contributor-covenant.org) code of conduct.
